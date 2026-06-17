@@ -1,4 +1,15 @@
-# RetailerBillingApp
+# RetailerBillingApp -Point of Sale Login & Billing Dashboard
+
+## 📋 Project Description
+Designed and built the authentication screen for RetailPOS, a retail billing and inventory management system. Implemented a responsive split-screen layout using Angular and Tailwind CSS, featuring an email/password login form with show/hide password toggle, remember-me option, and a branded info panel highlighting product, order, and accuracy metrics.
+
+## 🛠️ Skills & Technologies
+- Angular
+- Tailwind CSS
+- Responsive Design
+- UI/UX Design
+- TypeScript
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
 
