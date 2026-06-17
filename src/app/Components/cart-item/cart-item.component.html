@@ -1,0 +1,38 @@
+<div class="flex items-center justify-between py-3 border-b border-gray-100">
+
+  <!-- Name + unit price -->
+  <div class="flex-1">
+    <p class="font-medium text-gray-900">{{ item.product.name }}</p>
+    <p class="text-sm text-gray-400">₹{{ item.product.price }} each</p>
+  </div>
+
+  <!-- Quantity controls -->
+  <div class="flex items-center gap-2 mx-4">
+    <button
+      (click)="decrease()"
+      class="w-7 h-7 rounded-md border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50"
+    >
+      −
+    </button>
+    <span class="w-6 text-center font-medium">{{ item.quantity }}</span>
+    <button
+      (click)="increase()"
+      class="w-7 h-7 rounded-md border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50"
+    >
+      +
+    </button>
+  </div>
+
+  <!-- Line total + remove -->
+  <div class="flex items-center gap-3">
+    <span class="font-semibold text-gray-900 w-16 text-right">
+      ₹{{ item.product.price * item.quantity }}
+    </span>
+    <button (click)="onRemove()" class="text-gray-300 hover:text-red-500">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+</div>

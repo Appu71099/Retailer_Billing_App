@@ -1,0 +1,21 @@
+<!-- <p>dashboard works!</p> -->
+
+<div class="flex h-screen">
+
+  <!-- Left column: Sidebar (full height) -->
+  <app-side-bar></app-side-bar>
+
+  <!-- Right column: Header on top, content below -->
+  <div class="flex-1 flex flex-col overflow-y-auto">
+
+    <app-header-bar></app-header-bar>
+
+
+    <!-- Main page content goes here -->
+    <main class="flex-1 bg-gray-50 p-8">
+      <router-outlet></router-outlet> 
+    </main>
+
+  </div>
+
+</div>

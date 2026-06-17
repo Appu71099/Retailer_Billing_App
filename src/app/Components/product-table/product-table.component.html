@@ -1,0 +1,43 @@
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden mt-4 overflow-x-auto">
+  <table class="w-full table-fixed text-left">
+
+    <colgroup>
+      <col class="w-20" />        <!-- Image -->
+      <col class="w-1/4" />       <!-- Product Name -->
+      <col class="w-32" />        <!-- SKU -->
+      <col class="w-32" />        <!-- Category -->
+      <col class="w-24" />        <!-- Price -->
+      <col class="w-24" />        <!-- Stock -->
+      <col class="w-28" />        <!-- Actions -->
+    </colgroup>
+
+    <thead>
+      <tr class="border-b border-gray-200 bg-gray-50 text-sm font-semibold text-gray-500">
+        <th class="px-6 py-3">Image</th>
+        <th class="px-6 py-3">Product Name</th>
+        <th class="px-6 py-3">SKU</th>
+        <th class="px-6 py-3">Category</th>
+        <th class="px-6 py-3">Price</th>
+        <th class="px-6 py-3">Stock</th>
+        <th class="px-6 py-3">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (product of products; track product.id) {
+        <app-product-row
+          [product]="product"
+          (edit)="edit.emit($event)"
+          (delete)="delete.emit($event)"
+        ></app-product-row>
+      } @empty {
+        <tr>
+          <td colspan="7" class="text-center text-gray-400 py-12">
+            No products found.
+          </td>
+        </tr>
+      }
+    </tbody>
+
+  </table>
+</div>

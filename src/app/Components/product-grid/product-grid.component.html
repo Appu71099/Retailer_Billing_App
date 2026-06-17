@@ -1,0 +1,14 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+
+  @for (product of products; track product.id) {
+    <app-product-card
+      [product]="product"
+      (addToCart)="addToCart.emit($event)"
+    ></app-product-card>
+  } @empty {
+    <p class="text-gray-400 col-span-full text-center py-12">
+      No products found.
+    </p>
+  }
+
+</div>

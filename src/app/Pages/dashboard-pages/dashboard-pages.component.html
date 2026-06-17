@@ -1,0 +1,26 @@
+<div>
+  <h1 class="text-3xl font-bold text-gray-900">
+    Welcome back, {{ userName }}!
+  </h1>
+  <p class="text-gray-500 mt-1">
+    Here's what's happening with your store today.
+  </p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+  @for (stat of statCards; track stat.label) {
+    <app-stat-card [data]="stat"></app-stat-card>
+  }
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-6">
+  <div class="lg:col-span-2">
+
+    @for (item of quickActions; track $index) {
+      <app-quick-action [action]="item"></app-quick-action>
+    }
+  </div>
+  <div>
+    <app-recent-order [orders]="recentOrders"></app-recent-order>
+  </div>
+</div>

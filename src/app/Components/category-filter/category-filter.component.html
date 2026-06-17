@@ -1,0 +1,19 @@
+<div class="flex items-center gap-3 mt-4 overflow-x-auto pb-1">
+
+  @for (category of categories; track category) {
+    <button
+      (click)="onSelect(category)"
+      class="px-5 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-colors border"
+      [class.bg-blue-600]="activeCategory === category"
+      [class.text-white]="activeCategory === category"
+      [class.border-blue-600]="activeCategory === category"
+      [class.bg-white]="activeCategory !== category"
+      [class.text-gray-700]="activeCategory !== category"
+      [class.border-gray-200]="activeCategory !== category"
+      [class.hover:bg-gray-50]="activeCategory !== category"
+    >
+      {{ category }}
+    </button>
+  }
+
+</div>

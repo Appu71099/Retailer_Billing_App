@@ -1,0 +1,36 @@
+<div class="p-6">
+
+<div class="flex items-start justify-between">
+
+  <!-- Title + subtitle -->
+  <div>
+    <h1 class="text-3xl font-bold text-gray-900">Sales Reports</h1>
+    
+      <p class="text-gray-500 mt-1">View and analyze your sales performance</p>
+    
+  </div>
+
+  <!-- Action button -->
+
+    <button class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-3 rounded-xl transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+      </svg>
+     Export Report
+    </button>
+  
+
+</div>
+
+ <app-date-range-filter
+    [selected]="selectedRange()"
+    (rangeChange)="onRangeChange($event)"
+  ></app-date-range-filter>
+
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+    @for (stat of reportStats(); track stat.label) {
+      <app-report-stat-card [data]="stat"></app-report-stat-card>
+    }
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="flex items-center justify-between py-4 border-b border-gray-100 last:border-b-0">
+
+  <!-- Left: invoice id + time -->
+  <div>
+    <p class="font-semibold text-gray-900">{{ order.invoiceId }}</p>
+    <p class="text-sm text-gray-400 mt-0.5">{{ order.time }}</p>
+  </div>
+
+  <!-- Right: amount + status -->
+  <div class="text-right">
+    <p class="font-semibold text-gray-900">{{ order.amount }}</p>
+    <span
+      class="inline-block text-xs font-medium px-2.5 py-1 rounded-full mt-1"
+      [class.bg-green-50]="order.status === 'Completed'"
+      [class.text-green-600]="order.status === 'Completed'"
+      [class.bg-yellow-50]="order.status === 'Pending'"
+      [class.text-yellow-600]="order.status === 'Pending'"
+      [class.bg-red-50]="order.status === 'Cancelled'"
+      [class.text-red-600]="order.status === 'Cancelled'"
+    >
+      {{ order.status }}
+    </span>
+  </div>
+
+</div>
